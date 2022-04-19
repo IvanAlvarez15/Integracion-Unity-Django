@@ -1,6 +1,3 @@
-from asyncio.windows_events import NULL
-from ctypes.wintypes import PINT
-from pickle import NONE
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse, HttpResponseBadRequest, JsonResponse
