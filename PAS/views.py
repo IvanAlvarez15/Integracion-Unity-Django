@@ -150,7 +150,7 @@ def Conexion(request): #Esto es el de consulta
         jsonnuevo = (request.body).decode()
         jsonnuevo = json.loads(jsonnuevo)
         print(u)
-        if u == NULL or u=={} or len(u) == 0:
+        if u=={} or len(u) == 0:
             print("Malo")
             return HttpResponse("No se encuentra") #No se encontró nada
         else: 
@@ -176,7 +176,7 @@ def Conexionregistro(request):#Ese es el de alta
         u=Usuarios.objects.filter(Nombre_usuario = dicc['id'])
         jsonnuevo = (request.body).decode()
         jsonnuevo = json.loads(jsonnuevo)
-        if u == NULL or u=={} or len(u) == 0:
+        if u=={} or len(u) == 0:
             return HttpResponse("No se encuentra") #No se encontró nada
         else: #Esta regresando esto 
             return JsonResponse(jsonnuevo) #Le regresa a unity lo que esta dentro de var
@@ -190,7 +190,7 @@ def ConexionCambio(request):#Este es el de cambio
         dicc=ast.literal_eval(var.decode('utf-8'))
         print(var)
         u=Usuarios.objects.get(Nombre_usuario = dicc['id'])
-        if u == NULL or u=={}:
+        if u=={}:
             return HttpResponse("No se encuentra") #No se encontró nada
         else: #Esta regresando esto 
             u.Nombre_usuario = dicc['id']
